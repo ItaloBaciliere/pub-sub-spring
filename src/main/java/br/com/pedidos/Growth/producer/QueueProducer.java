@@ -1,4 +1,4 @@
-package br.com.pedidos.Growth;
+package br.com.pedidos.Growth.producer;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class QueueSender {
+public class QueueProducer {
 
   @Autowired
   private Queue queue;
@@ -15,6 +15,6 @@ public class QueueSender {
   private RabbitTemplate rabbitTemplate;
 
   public void send(String order){
-    rabbitTemplate.convertAndSend(this.queue.getName(), order);
+    rabbitTemplate.convertAndSend("exOrder", "outing-key-teste", order);
   }
 }

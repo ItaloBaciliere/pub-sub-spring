@@ -1,4 +1,4 @@
-package br.com.pedidos.Growth;
+package br.com.pedidos.Growth.queue;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.beans.factory.annotation.Value;
